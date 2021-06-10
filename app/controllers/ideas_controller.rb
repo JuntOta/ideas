@@ -10,12 +10,12 @@ class IdeasController < ApplicationController
     render json: @category_idea
   end
 
-  # def new
-  #   @category_idea = CategoryIdea.new
-  # end
+  def new
+    @category_idea = CategoryIdea.new
+  end
 
   def create
-    @category_idea = CategoryIdea.new(category_params)
+    @category_idea = CategoryIdea.new(category_idea_params)
     @category_idea.valid?
     if @category_idea.save
       render json: @category_idea, status: :created, location: @category_idea
@@ -26,8 +26,8 @@ class IdeasController < ApplicationController
 
   private
 
-    def category_params
-      params.require(:category_idea).permit(:name)
+    def category_idea_params
+      params.require(:category_idea).permit(:name, :body).merge(category_id: params[:category.id])
     end
 
     # def idea_params
