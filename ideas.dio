@@ -1,0 +1,29 @@
+<mxfile>
+    <diagram id="jbGmL9YxVnOamzZTJySp" name="ページ1">
+        <mxGraphModel dx="939" dy="785" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="8" value="categoriesテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="40" width="350" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value=" nickname (string/null:false)&#10; email (string/null:false, unique:true)&#10; encrypted_password(string/null:false)&#10; animal (string/null:false)&#10; birthday (date/null:false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=19;" parent="8" vertex="1">
+                    <mxGeometry y="50" width="350" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="ideasテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="380" width="350" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value=" date (date/null:false)&#10; text (text/null:false)&#10; color_id (integer/null:false)&#10; amount_id (integer/null:false)&#10; shape_id (integer/null:false)&#10; smell_id (integer/null:false)&#10; user (references/foreign_key: true)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=19;" parent="12" vertex="1">
+                    <mxGeometry y="50" width="350" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="endArrow=ERmany;html=1;rounded=0;fontSize=23;startArrow=ERone;startFill=0;targetPerimeterSpacing=0;endSize=25;startSize=25;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="12" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="305" y="220" as="sourcePoint"/>
+                        <mxPoint x="300" y="334" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
