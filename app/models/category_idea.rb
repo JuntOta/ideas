@@ -8,7 +8,7 @@ class CategoryIdea
   end
 
   def save
-    category = Category.create(name: name)
-    Idea.create(body: body, category_id: category.id)
+    @category = Category.create(name: name)
+    Idea.create(body: body, category_id: @category.id)
   end
 end
