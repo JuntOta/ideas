@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
 
   def index
-    @category_ideas = CategoryIdea.all
+    # @category_ideas = CategoryIdea.all
     render json: @category_ideas
   end
 
