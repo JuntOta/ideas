@@ -15,6 +15,10 @@ class IdeasController < ApplicationController
   end
 
   def create
+    # logger.debug(category_idea_params.inspect)
+    # @category = Category.new(category_params)
+    # @idea = Idea.new(idea_params)
+    # logger.debug(@category_idea.inspect)
     @category_idea = CategoryIdea.new(category_idea_params)
     @category_idea.valid?
     if @category_idea.save
@@ -22,13 +26,18 @@ class IdeasController < ApplicationController
     else
       render json: @category_idea.errors, status: 422
     end
+    @category.save
   end
 
   private
 
     def category_idea_params
-      params.require(:category_idea).permit(:name, :body).merge(category_id: params[:category.id])
+      params.require(:category_idea).permit(:category_name, :body).merge(category_id: @category.id)
     end
+
+    # def category_params
+    #   params.require(:category_idea).permit(:name)
+    # end
 
     # def idea_params
     #   params.require(:category_idea).permit(:body).merge(category_id: @category.id)
